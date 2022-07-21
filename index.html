@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Style Me!</title>
+    </head>
+    <body>
+        <h3>Change website style by type after the url <code class="c1"></h3>
+        <script defer>
+            document.querySelector('.c1').innerText = `?color=red&backgroundColor=blue`
+            const params = new URLSearchParams(window.location.search)
+                for(let i in document.body.style){
+                    if(params.get(i)){
+                    document.body.style[i] = decodeURI(params.get(i))
+                }
+            }
+        </script>
+    </body>
+</html>
