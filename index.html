@@ -6,7 +6,8 @@
     <body>
         <h3>Change website style by type after the url <code class="c1"></code></h3>
         <script defer>
-            document.querySelector('.c1').innerText = `?color=red&backgroundColor=blue`
+            document.querySelector('.c1').innerText = `?color=blue&backgroundColor=black`
+            if(!location.search){location.search = '?color=blue&backgroundColor=black'}
             const params = new URLSearchParams(window.location.search)
                 for(let i in document.body.style){
                     if(params.get(i)){
